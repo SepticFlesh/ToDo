@@ -19,7 +19,7 @@ struct TodoListView: View {
         NavigationStack {
             List {
                 ForEach(presenter.todos.filter {
-                    searchText.count == 0 ? true : ($0.title + ($0.description ?? "")).contains(searchText)
+                    searchText.count == 0 ? true : ($0.title + ($0.description ?? "")).uppercased().contains(searchText.uppercased())
                 }) { todo in
                     TodoRowView(todo: todo) {
                         presenter.didToggleTodoCompletion(todo)
@@ -61,6 +61,7 @@ struct TodoListView: View {
                     }
                 }
                 .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                .listRowBackground(Color.clear)
             }
             .searchable(text: $searchText)
             .navigationTitle("Задачи")
@@ -85,6 +86,8 @@ struct TodoListView: View {
 }
 
 struct TodoRowView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     let todo: TodoItem
     let onToggle: () -> Void
     
@@ -106,13 +109,13 @@ struct TodoRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(todo.title)
                     .font(.headline)
-                    .foregroundColor(todo.isCompleted ? .gray : .black)
+                    .foregroundColor(todo.isCompleted ? .gray : colorScheme == .dark ? .white : .black)
                     .strikethrough(todo.isCompleted)
                 
                 if let description = todo.description, !description.isEmpty {
                     Text(description)
                         .font(.subheadline)
-                        .foregroundColor(todo.isCompleted ? .gray : .black)
+                        .foregroundColor(todo.isCompleted ? .gray : colorScheme == .dark ? .white : .black)
                         .strikethrough(todo.isCompleted)
                 }
                 

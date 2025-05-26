@@ -33,7 +33,6 @@ class TodoListInteractor: TodoListInteractorInputProtocol {
     
     func fetchTodos() {
         databaseService.fetchTodos { [weak self] result in
-            print("iteractor:fetchtodos")
             switch result {
             case .success(let todos):
                 self?.presenter?.didFetchTodos(todos)
