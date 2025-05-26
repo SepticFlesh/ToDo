@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TodoDetailView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @ObservedObject var presenter: TodoDetailPresenter
@@ -28,7 +29,7 @@ struct TodoDetailView: View {
         VStack {
             TextField("Название", text: $title)
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .dark ? .white : .black)
                 .padding(16)
             
             ZStack(alignment: .leading) {
@@ -41,7 +42,7 @@ struct TodoDetailView: View {
                 }
                 TextEditor(text: $description)
                     .font(.subheadline)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .scrollContentBackground(.hidden)
                     .padding(0)
             }
