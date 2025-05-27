@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		719BDA6F2DE4C14700647EC9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BDA6E2DE4C14700647EC9 /* NetworkServiceTests.swift */; };
 		71DD70E02DDCE5830082FA55 /* ToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD70DF2DDCE5830082FA55 /* ToDoApp.swift */; };
 		71DD70E42DDCE5870082FA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DD70E32DDCE5870082FA55 /* Assets.xcassets */; };
 		71DD70E72DDCE5870082FA55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71DD70E62DDCE5870082FA55 /* Preview Assets.xcassets */; };
 		71DD70EC2DDCE5870082FA55 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71DD70EA2DDCE5870082FA55 /* ToDo.xcdatamodeld */; };
-		71DD70F62DDCE5870082FA55 /* ToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD70F52DDCE5870082FA55 /* ToDoTests.swift */; };
 		71DD71002DDCE5870082FA55 /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD70FF2DDCE5870082FA55 /* ToDoUITests.swift */; };
 		71DD71022DDCE5870082FA55 /* ToDoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD71012DDCE5870082FA55 /* ToDoUITestsLaunchTests.swift */; };
 		71DD710F2DDCE6BE0082FA55 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DD710E2DDCE6BE0082FA55 /* NetworkService.swift */; };
@@ -46,13 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		719BDA6E2DE4C14700647EC9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		71DD70DC2DDCE5830082FA55 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DD70DF2DDCE5830082FA55 /* ToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoApp.swift; sourceTree = "<group>"; };
 		71DD70E32DDCE5870082FA55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71DD70E62DDCE5870082FA55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71DD70EB2DDCE5870082FA55 /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		71DD70F12DDCE5870082FA55 /* ToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		71DD70F52DDCE5870082FA55 /* ToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTests.swift; sourceTree = "<group>"; };
 		71DD70FB2DDCE5870082FA55 /* ToDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71DD70FF2DDCE5870082FA55 /* ToDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITests.swift; sourceTree = "<group>"; };
 		71DD71012DDCE5870082FA55 /* ToDoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		71DD70F42DDCE5870082FA55 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
-				71DD70F52DDCE5870082FA55 /* ToDoTests.swift */,
+				719BDA6E2DE4C14700647EC9 /* NetworkServiceTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71DD70F62DDCE5870082FA55 /* ToDoTests.swift in Sources */,
+				719BDA6F2DE4C14700647EC9 /* NetworkServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
