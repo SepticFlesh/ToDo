@@ -32,8 +32,8 @@ struct TodoListView: View {
                         }
                         ShareLink(
                             "Поделиться",
-                            item: todo.description == nil ? todo.title : "\(todo.title)\n\(String(describing: todo.description))",
-                            preview: SharePreview("Export \(todo.title)")
+                            item: todo.description == nil ? todo.title : "\(todo.title)\n\(todo.description!)",
+                            preview: SharePreview(todo.title)
                         )
                         NavigationLink(destination: presenter.didSelectTodo(todo)) {
                             Text("Редактировать")
@@ -47,8 +47,8 @@ struct TodoListView: View {
                         }
                         ShareLink(
                             "Поделиться",
-                            item: todo.description == nil ? todo.title : "\(todo.title)\n\(String(describing: todo.description))",
-                            preview: SharePreview("Export \(todo.title)")
+                            item: todo.description == nil ? todo.title : "\(todo.title)\n\(todo.description!)",
+                            preview: SharePreview(todo.title)
                         )
                         Button(role: .destructive, action: {
                             presenter.didTapDeleteTodo(todo.id)

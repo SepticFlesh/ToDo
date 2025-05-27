@@ -12,13 +12,20 @@ protocol NetworkServiceProtocol {
 }
 
 class NetworkService: NetworkServiceProtocol {
+    var session: URLSession
+    var endPoint = "https://dummyjson.com/todos"
+    
+    init() {
+        self.session = URLSession.shared
+    }
+    
     func fetchTodos(completion: @escaping (Result<[TodoItem], Error>) -> Void) {
-        guard let url = URL(string: "https://dummyjson.com/todos") else {
+        guard let url = URL(string: endPoint) else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        session.dataTask(with: url) { data, response, error in
             DispatchQueue.global(qos: .background).async {
                 if let error = error {
                     completion(.failure(error))
@@ -28,6 +35,10 @@ class NetworkService: NetworkServiceProtocol {
                 guard let data = data else {
                     completion(.failure(NetworkError.noData))
                     return
+                }
+                
+                if data.isEmpty {
+                    completion(.failure(NetworkError.noData))
                 }
                 
                 do {
